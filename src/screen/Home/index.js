@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import {
-  View, Text, StyleSheet, TouchableOpacity, Alert,
+  View, Text, StyleSheet, Alert,
 } from 'react-native'
 import PropTypes from 'prop-types'
+
+import { Button } from '../../components'
 
 const styles = StyleSheet.create({
   container: {
@@ -64,13 +66,11 @@ class Home extends Component {
         <View>
           {!!routes.length
             && routes.map(route => (
-              <TouchableOpacity
+              <Button
                 key={route.id}
-                style={styles.button}
+                title={route.title}
                 onPress={() => this.handleRoute(route.name)}
-              >
-                <Text style={styles.buttonText}>{route.title}</Text>
-              </TouchableOpacity>
+              />
             ))}
         </View>
       </View>

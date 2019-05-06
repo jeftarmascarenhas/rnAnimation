@@ -11,7 +11,7 @@ const MainStack = createStackNavigator(
     SpringDacay,
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Timing',
   },
 )
 
