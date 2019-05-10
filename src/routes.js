@@ -2,16 +2,18 @@ import { createAppContainer, createStackNavigator } from 'react-navigation'
 
 import Home from './screen/Home'
 import Timing from './screen/Timing'
-import SpringDacay from './screen/SpringDacay'
+import Spring from './screen/Spring'
+import Decay from './screen/Decay'
 
 const MainStack = createStackNavigator(
   {
     Home,
     Timing,
-    SpringDacay,
+    Spring,
+    Decay,
   },
   {
-    initialRouteName: 'Timing',
+    initialRouteName: 'Home',
   },
 )
 

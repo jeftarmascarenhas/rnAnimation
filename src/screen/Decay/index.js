@@ -1,28 +1,23 @@
 import React, { Component } from 'react'
-import { View, Dimensions, Animated } from 'react-native'
+import { View, Animated } from 'react-native'
 
 import { Button } from '../../components'
-import stylesProps from './styles'
+import styles from './styles'
 
-const WIDTH = Dimensions.get('window').width
-const propStyles = { WIDTH }
-const styles = stylesProps(propStyles)
-
-class Timing extends Component {
+class Decay extends Component {
   static navigationOptions = {
-    title: 'Timing',
+    title: 'Decay',
   }
 
   state = {
     ballY: new Animated.Value(0),
   }
 
-  handleTimingBasic = () => {
+  handleDecayBasic = () => {
     const { ballY } = this.state
     ballY.setValue(0)
-    Animated.timing(ballY, {
-      toValue: 300,
-      duration: 1000,
+    Animated.decay(ballY, {
+      velocity: 0.5,
     }).start()
   }
 
@@ -30,7 +25,7 @@ class Timing extends Component {
     const { ballY } = this.state
     return (
       <View style={styles.container}>
-        <Button title="Timing Basic" onPress={this.handleTimingBasic} />
+        <Button title="Decay Basic" onPress={this.handleDecayBasic} />
         <Animated.View
           style={[
             styles.ball,
@@ -44,4 +39,4 @@ class Timing extends Component {
   }
 }
 
-export default Timing
+export default Decay
