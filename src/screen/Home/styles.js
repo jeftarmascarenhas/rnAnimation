@@ -10,11 +10,16 @@ const styles = StyleSheet.create({
   },
   paragraph: {
     marginVertical: 10,
+    paddingBottom: 10,
   },
   title: {
     fontSize: 26,
     fontWeight: '400',
     textAlign: 'center',
+  },
+  borderBottom: {
+    borderBottomColor: '#ddd',
+    borderBottomWidth: 1,
   },
   subtitle: {
     fontSize: 16,

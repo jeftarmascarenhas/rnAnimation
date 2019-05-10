@@ -10,30 +10,58 @@ class Decay extends Component {
   }
 
   state = {
-    ballY: new Animated.Value(0),
+    ballOneY: new Animated.Value(0),
+    ballTwoY: new Animated.Value(0),
+    ballThreeY: new Animated.Value(0),
   }
 
   handleDecayBasic = () => {
-    const { ballY } = this.state
-    ballY.setValue(0)
-    Animated.decay(ballY, {
+    const { ballOneY, ballTwoY, ballThreeY } = this.state
+    ballOneY.setValue(0)
+    Animated.decay(ballOneY, {
       velocity: 0.5,
+    }).start()
+    ballTwoY.setValue(0)
+    Animated.decay(ballTwoY, {
+      velocity: 0.7,
+    }).start()
+    ballThreeY.setValue(0)
+    Animated.decay(ballThreeY, {
+      velocity: 0.9,
     }).start()
   }
 
   render() {
-    const { ballY } = this.state
+    const { ballOneY, ballTwoY, ballThreeY } = this.state
     return (
       <View style={styles.container}>
         <Button title="Decay Basic" onPress={this.handleDecayBasic} />
-        <Animated.View
-          style={[
-            styles.ball,
-            {
-              top: ballY,
-            },
-          ]}
-        />
+        <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
+          <Animated.View
+            style={[
+              styles.ball,
+              {
+                top: ballOneY,
+              },
+            ]}
+          />
+          <Animated.View
+            style={[
+              styles.ball,
+              {
+                top: ballTwoY,
+              },
+            ]}
+          />
+          <Animated.View
+            style={[
+              styles.ball,
+              {
+                top: ballThreeY,
+              },
+            ]}
+          />
+        </View>
       </View>
     )
   }

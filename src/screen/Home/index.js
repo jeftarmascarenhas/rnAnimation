@@ -44,9 +44,12 @@ class Home extends Component {
     const { routes } = this.state
     return (
       <View style={styles.container}>
-        <View style={styles.paragraph}>
-          <Text style={styles.title}>Simples Animations</Text>
+        <View style={[styles.paragraph, styles.borderBottom]}>
+          <Text style={styles.title}>React Native Animations</Text>
           <Text style={styles.subtitle}>By Jeftar Mascarenhas</Text>
+        </View>
+        <View style={styles.paragraph}>
+          <Text style={styles.title}>Basic Animations</Text>
         </View>
         <View>
           {!!routes.length
