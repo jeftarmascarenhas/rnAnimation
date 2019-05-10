@@ -37,4 +37,4 @@ Or
 Separate command
 `react-native start`
 `react-native link`
-`react-native run-ios` / `react-naitve run-android`
+`react-native run-ios` / `react-native run-android`
